@@ -50,7 +50,7 @@ input:focus{
     border-color: #FFE1DE;
 }
 
-.btn {
+.btn{
   background-color: #ff6759;
   border-color: #fff;
   color: #ff6759;
@@ -140,6 +140,10 @@ input[name="answer"]{
     margin-bottom: 10px;
 }
 
+.main .controls input{
+    background-color: #efefef;
+}
+
 .navbar { margin-bottom: 10px }
 
 
@@ -164,11 +168,12 @@ input[name="answer"]{
 
 .navbar .nav > li > a {
     border-bottom: 1px black solid;
-    /*padding: 0px 0px 4px 0px;*/
+    padding: 0px 0px 4px 0px;
 }
 
 #login-buttons{
     margin-top: -7px;
+    text-transform: uppercase;
 }
 
 .nav .dropdown-toggle .caret {
@@ -203,6 +208,10 @@ input[name="answer"]{
 
 }
 #spinner { height: 300px }
+
+.question .edit-link{
+    font-size: 12px;
+}
 .post {
     *zoom: 1;
     -webkit-transition: all 300ms 0ms;

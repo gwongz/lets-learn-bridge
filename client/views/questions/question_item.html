@@ -1,3 +1,9 @@
 <template name="questionItem">
-	<h3 class="random-question">{{title}}</h3>
+	<div class="question">
+	<h3 class="random-question">{{title}}
+		{{#if ownQuestion}}
+    	<span class="edit-link"><a href="{{pathFor 'questionEdit'}}">Edit question</a></span>
+    	{{/if}}
+	</h3>
+	</div>
 </template>
