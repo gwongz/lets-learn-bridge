@@ -23,10 +23,19 @@ body {
     letter-spacing: 1px;
 }
 
-h3, input, textarea, a, p{
+h3, input, textarea, a, p, footer{
     font-family: 'proxima_novalight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 200;
 
+}
+
+footer {
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 1em;
+    margin-top: 4em;
+    color: #777;
 }
 
 input:focus{
@@ -74,6 +83,10 @@ input:focus{
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     background-image: none;
     outline: none;
+}
+
+#main{
+    min-height: 400px;
 }
 
 
