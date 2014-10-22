@@ -1,4 +1,12 @@
 <template name="incorrectAnswer">
 	<i class="fa fa-close fa-close-2x"></i>
 	Incorrect
+	<a href="#" class="hint">Reveal answer</a>
+
+	<div class="revealed-answer hidden">
+		<p>
+			{{answer}} {{explanation}}
+		</p>
+	</div>
+
 </template>

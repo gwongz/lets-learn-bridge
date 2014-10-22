@@ -96,7 +96,6 @@ input:focus{
 }
 
 
-
 #outer {
     width: 600px;
     margin: 0 auto;
@@ -110,6 +109,11 @@ input:focus{
 }
 
 
+
+.answer-item{
+  padding-bottom: 20px;
+}
+
 .answer-item input{
   width: 80%;
   background-color: #fff;
@@ -118,6 +122,10 @@ input:focus{
   font-size: 48px !important;
   min-height: 80px;
 
+}
+
+.answer .btn-default{
+  margin-right: 20px;
 }
 
 .controls input{

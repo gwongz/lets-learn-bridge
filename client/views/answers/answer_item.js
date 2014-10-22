@@ -1,4 +1,5 @@
-getRandom = function() {
+getRandom = function(currentId) {
+    // make sure next question is not the same as one just completed
     var alreadyAnswered = CorrectAnswers.find({}, {fields: {question_id: 1}}).fetch();
     console.log('these are already answered');
     already_ids = _.flatten(_.pluck(alreadyAnswered, 'question_id'), true);
@@ -6,28 +7,23 @@ getRandom = function() {
     var questions = Questions.find({}, {fields: {_id: 1}}).fetch();
     var question_ids = _.flatten(_.pluck(questions, '_id'), true);
 
-    eligible_ids = _.difference(question_ids, already_ids);
-    console.log('the eligible ids');
-    console.log(eligible_ids); 
-    var random_id = eligible_ids[Math.floor(Math.random() * eligible_ids.length)];
-    console.log('these are the eligible ids');
-    console.log(eligible_ids);
+    eligible_ids = _.difference(question_ids, already_ids, [currentId]);
+
     if (!eligible_ids.length){
       console.log('user has answered all of the questions');
       Router.go('allAnswered');
     }
-
-    // var random_id = question_ids[Math.floor(Math.random() * question_ids.length)];
-    console.log('these are the question ids');
-    // console.log(question_ids);
-    console.log('a random_id');
-    console.log(random_id);
+    var random_id = eligible_ids[Math.floor(Math.random() * eligible_ids.length)];
+    console.log('these are the eligible ids');
+    console.log(eligible_ids);
     return random_id;
 };
 
 clearAnswer = function(){
+  // set questionPage template back to default 
   $('input[name=answer]').val('');
   $('.correct, .incorrect').addClass('hidden');
+  $('.revealed-answer').addClass('hidden');
 };
 
 Template.answerItem.events({
@@ -52,7 +48,7 @@ Template.answerItem.events({
         $('.correct').removeClass('hidden');
         $('.incorrect').addClass('hidden');
         logAnswer(answerAttributes.question);
-        var randomId = getRandom();
+        var randomId = getRandom(answerAttributes.question);
         setTimeout(function(){
           clearAnswer();
           Router.go('questionPage', {_id: randomId});
@@ -69,6 +65,13 @@ Template.answerItem.events({
         e.preventDefault();
         $('form').submit();
     }
+  },
+
+  'click .skip-question': function(){
+    console.log('skip button was clicked');
+    var randomId = getRandom(this._id);
+    Router.go('questionPage', {_id: randomId});
+
   },
 
 });

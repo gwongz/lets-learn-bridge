@@ -1,23 +1,18 @@
 <template name="answerItem">
-	<!-- <div class="answer-item"> -->
 		<form class="answer">
 			<div class="answer-item">
-			<input name="answer" type="text" class="form-control" value="" autofocus="autofocus" maxlength="45" placeholder="{{num_check}}"/>
+				<input name="answer" type="text" class="form-control" value="" autofocus="autofocus" maxlength="45" placeholder="{{num_check}}"/>
 			</div>
 		
 			<div class="control-group">
-		        <!-- <div class="controls"> -->
         	    <input type="submit" value="Submit" class="btn btn-default"/>
-        		<!-- </div> -->
+        	    <input type="button" value="Skip" class="btn btn-default skip-question"/>
+    		</div>
+
+    		<div class="control-group">
+    			
     		</div>
 		</form>
-
-
-
-
-
-	<!-- </div> -->
-
 
 	<div class="hidden correct">
 		{{>correctAnswer}}
@@ -26,5 +21,4 @@
 	<div class="hidden incorrect">
 		{{>incorrectAnswer}}
 	</div>
-	<!-- The answer goes here -->
 </template>

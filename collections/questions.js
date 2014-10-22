@@ -60,30 +60,19 @@ Meteor.methods({
   	if (!questionAttributes.answer)
   		throwError(422, 'Please provide an answer');
 
-    
-
-
-    var question = _.extend(_.pick(questionAttributes, 'title', 'answer'), {
+    var question = _.extend(_.pick(questionAttributes, 'title', 'answer', 'explanation'), {
       userId: user._id,
       author: user.username,
       submitted: new Date().getTime(),
     });
 
-
-
-
     var questionId = Questions.insert(question);
     // set the right kind attribute on the question
     Meteor.call('questionKind', questionId);
-    console.log('value of kind');
-
-
     return questionId;
   },
 
   checkAnswer: function(answerAttributes){
-    console.log('in checkAnswer');
-    console.log('this is the answer provided');
     console.log(answerAttributes.answer);
     console.log('this is id of question being answered');
     console.log(answerAttributes.question);
@@ -91,8 +80,6 @@ Meteor.methods({
       throwError(422, 'Please provide an answer');
     }
     
-    console.log('made it this far');
-
     var submitted = answerAttributes.answer.toLowerCase();
     submitted = submitted.replace(/,|and|the|of/g, '').trim();
 
@@ -133,17 +120,6 @@ Meteor.methods({
     if (submitted !== correct){
       throwError(422, 'Incorrect answer');
     }
-
-    // return question._id;
-      // return new Meteor.error(422, 'Incorrect answer');
-
-    // if (submitted == correct){
-      // console.log('the correct answer was submitted');
-
-    // } else {
-      // console.log('INCORRECT');
-      // throw new Meteor.error(422, 'Incorrect answer');
-    // }
 
   },
 
