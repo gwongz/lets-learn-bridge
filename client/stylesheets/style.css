@@ -1,8 +1,15 @@
 /* CSS declarations go here */
 
+@font-face {
+    font-family: 'proxima_novalight';
+    src: url('public/proximanova-light-webfont.eot');
+    /*src: local('Riesling Regular'), local('Riesling'), url('fonts/riesling.ttf') format('truetype');*/
+}
+
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 200;
+    font-family: 'proxima_novalight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /*font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
+    /*font-weight: 200;*/
     margin: 50px 0;
     padding: 0;
     -webkit-user-select: none;
@@ -10,57 +17,63 @@ body {
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
+    background: #f6f6f6;
+/*    background: #ff6759;
+
+*/  
+    color: #ff6759;  
+    /*color: #000;*/
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 1px;
 }
+
+h3{
+    font-family: 'proxima_novalight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 200;
+
+}
+
+.btn
+{
+  background-color: #ff6759;
+  border-color: #fff;
+}
+.dropdown-menu > button, .btn-default{
+    border-radius: 0px;
+    font-size: 14px;
+    letter-spacing: .1em;
+    color: #ff6759;
+    background-color: #fff;
+    border: solid 2px #ff6759;
+    text-transform: uppercase;
+    /*background: #ff6759;*/
+    /*border-color: #ff6759;*/
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-image: none;
+    outline: none;
+}
+
+.dropdown-menu > button:hover, .dropdown-menu>button:active, .dropdown-menu>button:visited, .dropdown-menu>button:focus, .btn-default:active, .btn-default:hover, .btn-default:focus{
+    border-radius: 0px;
+    font-size: 14px;
+    letter-spacing: .1em;
+    color: #fff;
+    background-color: #ff6759;
+    border: solid 2px #ff6759;
+    text-transform: uppercase;
+    /*background: #ff6759;*/
+    border-color: #ff6759;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-image: none;
+    outline: none;
+}
+
+
 
 #outer {
     width: 600px;
     margin: 0 auto;
-}
-
-.player {
-    cursor: pointer;
-    padding: 5px;
-}
-
-.player .name {
-    display: inline-block;
-    width: 300px;
-    font-size: 1.75em;
-}
-
-.player .score {
-    display: inline-block;
-    width: 100px;
-    text-align: right;
-    font-size: 2em;
-    font-weight: bold;
-    color: #777;
-}
-
-.player.selected {
-    background-color: yellow;
-}
-
-.player.selected .score {
-    color: black;
-}
-
-.details, .none {
-    font-weight: bold;
-    font-size: 2em;
-    border-style: dashed none none none;
-    border-color: #ccc;
-    border-width: 4px;
-    margin: 50px 10px;
-    padding: 10px 0px;
-}
-
-.none {
-    color: #777;
-}
-
-.inc {
-  cursor: pointer;
 }
 
 .form-control{
@@ -77,13 +90,18 @@ body {
 }
 
 .answer-item input{
-	width: 100%;
-	background-color: yellow;
+	width: 80%;
+	background-color: #fff;
 	line-height: 2em;
 }
 
 .controls input{
 	width: auto;
+
+}
+
+.controls textarea{
+    width: 60%;
 
 }
 
@@ -98,7 +116,7 @@ body {
     border-radius: 3px;
     padding: 10px;
     margin-bottom: 10px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    /*box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);*/
 }
 /*body {
     background: #eee;
@@ -106,17 +124,80 @@ body {
 }*/
 .navbar { margin-bottom: 10px }
 
-.navbar .brand{
-	font-size: 14px;
-	line-height: 20px;
-}
+/*.navbar .brand{*/
+	/*font-size: 14px;*/
+	/*line-height: 20px;*/
+    /*text-shadow:none;*/
+    /*text-decoration: underline;*/
+    /*color: #000;*/
+    /*font-size: 1em;*/
+/*}*/
+
 .navbar .navbar-inner {
-	background: #fff;
+    background: #f6f6f6;
+    /*background: #ff6759;*/
+	/*background: #fff;*/
 	box-shadow: none;
 	border-radius: none;
 	border: none;
 	padding: 0px;
     /*border-radius: 0px 0px 3px 3px;*/
+}
+
+
+.navbar .nav > li {
+    padding: 7px 45px 7px 0px;
+
+}
+
+.navbar .nav > li:last-child{
+    padding: 7px 0px;
+
+}
+
+.navbar .nav > li > a {
+    border-bottom: 1px black solid;
+    padding: 0px 0px 4px 0px;
+}
+
+/*.navbar .nav > li > a {
+    text-shadow:none;
+    border-bottom: 1px black solid;
+    color: #000;
+}
+
+.navbar .nav > li > a:last-child {
+    text-shadow:none;
+    border-bottom: 1px black solid;
+    padding: 7px 0px;
+    color: #000;
+}*/
+
+.nav .dropdown-toggle .caret {
+    margin-top: 6px;
+    border-top-color: #000;
+    border-bottom-color: #000;
+}
+
+.nav .dropdown > a:hover .caret{
+    border-top-color: #000;
+    border-bottom-color: #000;
+}
+
+.nav .dropdown > .caret:hover {
+   border-top-color: #000;
+   border-bottom-color: #000;
+ }
+
+.dropdown-toggle:hover{
+    color: #000;
+    border-top-color: #000;
+    border-bottom-color: #000;
+
+}
+.nav .dropdown-toggle .caret:hover {
+    border-top-color: #000;
+    border-bottom-color: #000;
 }
 #spinner { height: 300px }
 .post {
