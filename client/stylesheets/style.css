@@ -8,8 +8,7 @@
 
 body {
     font-family: 'proxima_novalight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    /*font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
-    /*font-weight: 200;*/
+    font-weight: 200;
     margin: 50px 0;
     padding: 0;
     -webkit-user-select: none;
@@ -18,26 +17,34 @@ body {
     -o-user-select: none;
     user-select: none;
     background: #f6f6f6;
-/*    background: #ff6759;
-
-*/  
     color: #ff6759;  
-    /*color: #000;*/
     font-size: 14px;
     line-height: 1.4;
     letter-spacing: 1px;
 }
 
-h3{
+h3, input, textarea, a, p{
     font-family: 'proxima_novalight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 200;
 
 }
 
-.btn
-{
+input:focus{
+    outline: none;
+    border-color: #fff;
+    box-shadow: none;
+}
+
+.alert-error{
+    color: #ff6759;
+    background-color: #FFF0EE;
+    border-color: #FFE1DE;
+}
+
+.btn {
   background-color: #ff6759;
   border-color: #fff;
+  color: #ff6759;
 }
 .dropdown-menu > button, .btn-default{
     border-radius: 0px;
@@ -87,12 +94,14 @@ h3{
     border: 1px solid #fff !important;
     font-size: 48px !important;
 
+
 }
 
-.answer-item input{
+input[name="answer"]{
 	width: 80%;
 	background-color: #fff;
 	line-height: 2em;
+    color: #777777;
 }
 
 .controls input{
@@ -116,32 +125,17 @@ h3{
     border-radius: 3px;
     padding: 10px;
     margin-bottom: 10px;
-    /*box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);*/
 }
-/*body {
-    background: #eee;
-    color: #666666;
-}*/
+
 .navbar { margin-bottom: 10px }
 
-/*.navbar .brand{*/
-	/*font-size: 14px;*/
-	/*line-height: 20px;*/
-    /*text-shadow:none;*/
-    /*text-decoration: underline;*/
-    /*color: #000;*/
-    /*font-size: 1em;*/
-/*}*/
 
 .navbar .navbar-inner {
     background: #f6f6f6;
-    /*background: #ff6759;*/
-	/*background: #fff;*/
 	box-shadow: none;
 	border-radius: none;
 	border: none;
 	padding: 0px;
-    /*border-radius: 0px 0px 3px 3px;*/
 }
 
 
@@ -159,19 +153,6 @@ h3{
     border-bottom: 1px black solid;
     padding: 0px 0px 4px 0px;
 }
-
-/*.navbar .nav > li > a {
-    text-shadow:none;
-    border-bottom: 1px black solid;
-    color: #000;
-}
-
-.navbar .nav > li > a:last-child {
-    text-shadow:none;
-    border-bottom: 1px black solid;
-    padding: 7px 0px;
-    color: #000;
-}*/
 
 .nav .dropdown-toggle .caret {
     margin-top: 6px;
