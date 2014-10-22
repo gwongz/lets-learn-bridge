@@ -138,7 +138,13 @@ input:focus{
 	box-shadow: none;
 }
 
+.question{
+  padding: 2px 20px 2px 0px;
+}
 
+.question h3{
+  line-height: 1.6em;
+}
 
 .main, .post, .comments li, .comment-form {
     background: #fff;
@@ -219,7 +225,7 @@ input:focus{
 .question .edit-link{
     font-size: 12px;
 }
-.post {
+/*.post {
     *zoom: 1;
     -webkit-transition: all 300ms 0ms;
     -webkit-transition-delay: ease-in;
@@ -262,7 +268,7 @@ input:focus{
     display: block;
     float: right;
     margin-top: 7px;
-}
+}*/
 .comments {
     list-style-type: none;
     margin: 0;
