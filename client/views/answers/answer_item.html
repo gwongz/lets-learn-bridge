@@ -1,0 +1,24 @@
+<template name="answerItem">
+	<div class="answer-item">
+		<form class="answer">
+			<input name="answer" type="text" class="form-control" value="" autofocus="autofocus" maxlength="45" placeholder="{{num_check}}"/>
+		
+			<div class="control-group">
+		        <div class="controls">
+        	    <input type="submit" value="Submit" class="btn btn-default"/>
+        		</div>
+    		</div>
+		</form>
+
+	</div>
+
+
+	<div class="hidden correct">
+		{{>correctAnswer}}
+	</div>
+
+	<div class="hidden incorrect">
+		{{>incorrectAnswer}}
+	</div>
+	<!-- The answer goes here -->
+</template>
