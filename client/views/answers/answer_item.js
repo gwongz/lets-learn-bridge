@@ -12,6 +12,10 @@ getRandom = function() {
     var random_id = eligible_ids[Math.floor(Math.random() * eligible_ids.length)];
     console.log('these are the eligible ids');
     console.log(eligible_ids);
+    if (!eligible_ids.length){
+      console.log('user has answered all of the questions');
+      Router.go('allAnswered');
+    }
 
     // var random_id = question_ids[Math.floor(Math.random() * question_ids.length)];
     console.log('these are the question ids');
