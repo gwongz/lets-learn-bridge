@@ -2,18 +2,6 @@ Questions = new Meteor.Collection('questions');
 
 Meteor.methods({
 
-  findRandom: function(){
-    var questions = Questions.find({}, {fields: {_id: 1}}).fetch();
-    var question_ids = _.flatten(_.pluck(questions, '_id'), true);
-    var random_id = question_ids[Math.floor(Math.random() * question_ids.length)];
-    console.log('these are the question ids');
-    console.log(question_ids);
-    console.log('a random_id');
-    console.log(random_id);
-    return random_id;
-
-  },
-
   questionKind: function(questionId){
     var question = Questions.findOne(questionId);
     var answer = question.answer.toLowerCase().replace(/,/g, '');
