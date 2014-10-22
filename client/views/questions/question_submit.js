@@ -5,7 +5,6 @@ Template.questionSubmit.events({
     var question = {
       answer: $(e.target).find('[name=answer]').val(),
       title: $(e.target).find('[name=title]').val(),
-      // message: $(e.target).find('[name=message]').val()
     };
 
     Meteor.call('question', question, function(error, id) {

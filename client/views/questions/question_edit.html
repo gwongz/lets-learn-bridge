@@ -1,22 +1,24 @@
 <template name="questionEdit">
   <form class="main">
-    <div class="control-group">
-    	<label class="control-label" for="url">Answer</label>
-        <div class="controls">
-            <input name="answer" type="text" value="{{answer}}" placeholder="Answer"/>
-        </div>
-    </div>
+
 
     <div class="control-group">
         <label class="control-label" for="title">Question</label>
         <div class="controls">
-            <input name="title" type="text" value="{{title}}" placeholder="Question"/>
+            <input name="title" type="text" value="{{title}}" class="form-control" placeholder="Question"/>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="url">Answer</label>
+        <div class="controls">
+            <input name="answer" type="text" value="{{answer}}" class="form-control" placeholder="Answer"/>
         </div>
     </div>
 
     <div class="control-group">
         <div class="controls">
-            <input type="submit" value="Submit" class="btn btn-primary submit"/>
+            <input type="submit" value="Submit" class="btn btn-default submit"/>
         </div>
     </div>
     <hr/>
