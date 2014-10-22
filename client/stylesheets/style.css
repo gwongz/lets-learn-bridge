@@ -164,7 +164,11 @@ input[name="answer"]{
 
 .navbar .nav > li > a {
     border-bottom: 1px black solid;
-    padding: 0px 0px 4px 0px;
+    /*padding: 0px 0px 4px 0px;*/
+}
+
+#login-buttons{
+    margin-top: -7px;
 }
 
 .nav .dropdown-toggle .caret {
@@ -192,6 +196,11 @@ input[name="answer"]{
 .nav .dropdown-toggle .caret:hover {
     border-top-color: #000;
     border-bottom-color: #000;
+}
+
+.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle{
+    background-color: inherit;
+
 }
 #spinner { height: 300px }
 .post {
@@ -272,4 +281,16 @@ input[name="answer"]{
 .load-more:hover {
     text-decoration: none;
     background: rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 979px){
+.nav-collapse .nav > li > a:hover, .nav-collapse .nav > li > a:focus, .nav-collapse .dropdown-menu a:hover, .nav-collapse .dropdown-menu a:focus {
+ background-color: inherit;
+}
+
+.navbar .nav > li > a {
+    border-radius: 0px;
+    border-bottom: 1px black solid;
+    width: 700px;
+}
 }
