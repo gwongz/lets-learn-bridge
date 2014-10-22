@@ -6,7 +6,8 @@ Template.questionEdit.events({
 
     var questionProperties = {
       answer: $(e.target).find('[name=answer]').val(),
-      title: $(e.target).find('[name=title]').val()
+      title: $(e.target).find('[name=title]').val(),
+      explanation: $(e.target).find('[name=explanation]').val()
     }
 
     Questions.update(currentQuestionId, {$set: questionProperties}, function(error) {

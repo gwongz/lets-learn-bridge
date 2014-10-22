@@ -30,6 +30,10 @@ h3, input, textarea, a, p, footer{
 
 }
 
+p{
+  padding: 10px;
+}
+
 footer {
     clear: both;
     position: relative;
@@ -99,28 +103,29 @@ input:focus{
 }
 
 .form-control{
-    /*border-color: #66afe9;*/
-    /*outline: none;*/
-    
-    /*-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);*/
-    box-shadow: none !important;
-    min-height: 80px;
-    /*border-color: #fff;*/
-    border: 1px solid #fff !important;
-    font-size: 48px !important;
-
-
+  box-shadow: none !important;
+  /*min-height: 80px;*/
+  border: 1px solid #fff !important;
+  /*font-size: 48px !important;*/
 }
 
-input[name="answer"]{
-	width: 80%;
-	background-color: #fff;
-	line-height: 2em;
-    color: #777777;
+
+.answer-item input{
+  width: 80%;
+  background-color: #fff;
+  line-height: 2em;
+  color: #777777;
+  font-size: 48px !important;
+  min-height: 80px;
+
 }
 
 .controls input{
-	width: auto;
+  width: 80%;
+  min-height: 50px;
+  font-size: 16px;
+	/*width: auto;*/
+  line-height: inherit;
 
 }
 
@@ -169,7 +174,7 @@ input[name="answer"]{
 }
 
 .navbar .nav > li > a {
-    border-bottom: 1px black solid;
+    border-bottom: 1px #777 solid;
     padding: 0px 0px 4px 0px;
 }
 
@@ -180,29 +185,29 @@ input[name="answer"]{
 
 .nav .dropdown-toggle .caret {
     margin-top: 6px;
-    border-top-color: #000;
-    border-bottom-color: #000;
+    border-top-color: #777;
+    border-bottom-color: #777;
 }
 
 .nav .dropdown > a:hover .caret{
-    border-top-color: #000;
-    border-bottom-color: #000;
+    border-top-color: #777;
+    border-bottom-color: #777;
 }
 
 .nav .dropdown > .caret:hover {
-   border-top-color: #000;
-   border-bottom-color: #000;
+   border-top-color: #777;
+   border-bottom-color: #777;
  }
 
 .dropdown-toggle:hover{
-    color: #000;
-    border-top-color: #000;
-    border-bottom-color: #000;
+    color: #777;
+    border-top-color: #777;
+    border-bottom-color: #777;
 
 }
 .nav .dropdown-toggle .caret:hover {
-    border-top-color: #000;
-    border-bottom-color: #000;
+    border-top-color: #777;
+    border-bottom-color: #777;
 }
 
 .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle{
