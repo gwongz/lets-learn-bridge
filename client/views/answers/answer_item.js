@@ -38,8 +38,6 @@ Template.answerItem.events({
     };
 
     
-
-
     Meteor.call('checkAnswer', answerAttributes, function(error){
       if (error){
         $('.incorrect').removeClass('hidden');
@@ -68,20 +66,15 @@ Template.answerItem.events({
   },
 
   'click .skip-question': function(){
-    console.log('skip button was clicked');
     var randomId = getRandom(this._id);
     Router.go('questionPage', {_id: randomId});
-
   },
 
 });
 
 Template.answerItem.helpers({
 
-  num_check: function(){
-      console.log('what is value of this in answerItem');
-      console.log(this._id);
-
+  is_num: function(){
       if (this.kind == 'number'){
         return 'Enter digits';
       } else {

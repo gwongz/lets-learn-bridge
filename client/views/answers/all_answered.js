@@ -1,7 +1,4 @@
-
-
 Template.allAnswered.rendered = function() {
-   console.log('allAnswered on load');
-   // var randomId = getRandom();
-   // Router.go('questionPage', {_id: randomId});
+   // clear the Correct Answers collection so user can restart via reshuffle
+   CorrectAnswers.remove({});
 };

@@ -5,6 +5,14 @@ Questions.allow({
     remove: ownsDocument
 });
 
+var cleanAnswer = function(answer){
+  // clean user submitted answer and return as array of strings
+  var submitted = answer.toLowerCase();
+  submitted = submitted.replace(/,|and|the|of/g, '').trim();
+  return submitted.split(' ');
+};
+
+
 Meteor.methods({
 
   questionKind: function(questionId){
@@ -79,45 +87,19 @@ Meteor.methods({
     if (!answerAttributes.answer){
       throwError(422, 'Please provide an answer');
     }
-    
-    var submitted = answerAttributes.answer.toLowerCase();
-    submitted = submitted.replace(/,|and|the|of/g, '').trim();
 
+    var submitted = cleanAnswer(answerAttributes.answer);
     console.log('submitted');
     console.log(submitted);
+
     var question = Questions.findOne(answerAttributes.question);
-    var correct = question.answer.toLowerCase();
-    correct = correct.replace(/,|and|the|of/g, '').trim();
+    var correct = cleanAnswer(question.answer);
+
     console.log('correct answer');
     console.log(correct);
     var alsoCorrect;
 
-    if (question.kind == 'number'){
-      // can accept spelled out or digits
-
-    }
-
-    if (question.kind == 'boolean'){
-      if (question.answer == 'yes'){
-        alsoCorrect = ['y', 'true'];
-      } else {
-        alsoCorrect = ['n', 'false'];
-      }
-      // 
-    }
-
-    if (question.kind == 'suits'){
-      // correct = 
-    }
-
-    if (alsoCorrect){
-      if (_.contains(alsoCorrect, submitted)){
-        return true;
-      }
-    }
-
-
-    if (submitted !== correct){
+    if (!_.isEmpty(_.difference(submitted, correct))){
       throwError(422, 'Incorrect answer');
     }
 
