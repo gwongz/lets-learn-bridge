@@ -11,3 +11,10 @@ if (Meteor.isClient){
   Meteor.startup(function(){
   });
 }
+
+Template.header.events({
+	'click .reshuffle': function(){
+		// clear the correct answers collection to restart 
+		CorrectAnswers.remove({});
+	},
+});
