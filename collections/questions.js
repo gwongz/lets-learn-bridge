@@ -31,20 +31,12 @@ var isAccepted = function(submitted, correct, question){
   }
 
   if (question.kind == 'suits'){
-    // need to accept 'heart for hearts'
-    
-    console.log('submitted before turning plural');
-    console.log(submitted)
+    // need to accept 'heart' for hearts'
     _.each(submitted, function(suit, index){
-      console.log(index);
       if (_.contains(suits, suit)){
         submitted[index] = suit + 's';
       }
     });
-    console.log('submitted after loop');
-    console.log(submitted);
-    console.log(submitted.join());
-    console.log(correct.join());
     return submitted.join() == correct.join();
 
   }
@@ -56,11 +48,12 @@ var isAccepted = function(submitted, correct, question){
 Meteor.methods({
 
   questionKind: function(questionId){
-    var question = Questions.findOne(questionId);
-    var answer = question.answer.toLowerCase().replace(/,/g, '');
-    var kind;
-    var bools = ['yes', 'no'];
-    var suits = ['hearts', 'spades', 'diamonds', 'clubs', 'heart', 'spade', 'diamond', 'club'];
+    var question = Questions.findOne(questionId)
+    ,   answer = question.answer.toLowerCase().replace(/,/g, '')
+    ,   suits = ['hearts', 'spades', 'diamonds', 'clubs', 'heart', 'spade', 'diamond', 'club']
+    ,   bools = ['yes', 'no']
+    ,   kind
+    ,   questionProperties;
 
     if (!isNaN(parseFloat(answer))){
       kind = 'number';
@@ -70,17 +63,14 @@ Meteor.methods({
       kind = 'boolean';
     }
 
+    // determine if there is suit named in the answer
     answer = answer.split(' ');
-
-    var intersection = _.intersection(answer, suits);
-    console.log('is there an intersection?');
-    console.log(intersection.length);
-    if (intersection.length){
+    if (_.intersection(answer, suits).length){
       kind = 'suits';
     }
 
-
-    var questionProperties = {
+    // set the right kind on the question
+    questionProperties = {
       kind: kind
     };
 
@@ -116,7 +106,7 @@ Meteor.methods({
     });
 
     questionId = Questions.insert(question);
-    // set the right kind attribute on the question
+    // figure out the right kind attribute on the question
     Meteor.call('questionKind', questionId);
     return questionId;
   },
