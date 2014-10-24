@@ -1,11 +1,8 @@
-// Server and client functions that can be used throughout
+// displaying errors on client 
 Errors = new Meteor.Collection(null);
 
 throwError = function(code, message){
-	console.log('throwing an error with this message');
-	console.log(message);
-    Errors.insert({message: message, seen: false});
-
+  Errors.insert({message: message, seen: false});
 
 };
 
