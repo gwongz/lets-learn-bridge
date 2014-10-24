@@ -2,8 +2,9 @@
 
 @font-face {
     font-family: 'proxima_novalight';
-    src: url('public/proximanova-light-webfont.eot');
-    /*src: local('Riesling Regular'), local('Riesling'), url('fonts/riesling.ttf') format('truetype');*/
+    src: url('public/proximanova-light-webfont.eot');/* IE9 Compat Modes */
+    src: url('public/proximanova-light-webfont.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    src: url('public/proximanova-light-webfont.svg') format('svg'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }
 
 body {
