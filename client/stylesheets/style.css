@@ -50,6 +50,11 @@ input:focus{
     box-shadow: none;
 }
 
+a:focus{
+  outline: none;
+  
+}
+
 .alert-error{
     color: #ff6759;
     background-color: #FFF0EE;
