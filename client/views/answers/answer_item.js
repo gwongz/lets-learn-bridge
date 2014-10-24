@@ -38,7 +38,7 @@ clearAnswer = function(){
 
 Template.answerItem.events({
 
-  'submit form': function(e) {
+  'submit form.answer': function(e) {
     e.preventDefault();
 
     // var question = Session.get('selected_question');

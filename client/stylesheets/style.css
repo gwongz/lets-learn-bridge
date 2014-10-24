@@ -52,7 +52,7 @@ input:focus{
 
 a:focus{
   outline: none;
-  
+
 }
 
 .alert-error{
@@ -67,7 +67,7 @@ a:focus{
   border-color: #fff;
   color: #ff6759;
 }
-.dropdown-menu > button, .btn-default{
+.dropdown-menu > button, .btn-default, .btn-primary, .login-close{
     border-radius: 0px;
     font-size: 14px;
     letter-spacing: .1em;
@@ -79,41 +79,39 @@ a:focus{
     /*border-color: #ff6759;*/
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     background-image: none;
-    outline: none;
+    /*outline: none;*/
 }
 
-.dropdown-menu > button:hover, .dropdown-menu>button:active, .dropdown-menu>button:visited, .dropdown-menu>button:focus, .btn-default:active, .btn-default:hover, .btn-default:focus{
-    border-radius: 0px;
-    font-size: 14px;
-    letter-spacing: .1em;
-    color: #fff;
-    background-color: #ff6759;
-    border: solid 2px #ff6759;
-    text-transform: uppercase;
-    /*background: #ff6759;*/
-    border-color: #ff6759;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    background-image: none;
-    outline: none;
+.nav .dropdown-toggle:hover .caret, .nav .dropdown-toggle:focus .caret {
+  border-top-color: #777;
+  border-bottom-color: #777;
+}
+
+.dropdown-menu > button:hover, .dropdown-menu > button:active, .dropdown-menu > button:visited, 
+.dropdown-menu>button:focus, .btn-default:active, .btn-default:hover, .btn-default:focus,
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active,
+.login-close:hover, .login-close:focus, .login-close:active{
+  border-radius: 0;
+  font-size: 14px;
+  letter-spacing: .1em;
+  color: #fff;
+  background-color: #ff6759;
+  border: solid 2px #ff6759;
+  text-transform: uppercase;
+  border-color: #ff6759;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-image: none;
+  outline: none;
 }
 
 #main{
     min-height: 400px;
 }
 
-
-#outer {
-    width: 600px;
-    margin: 0 auto;
-}
-
 .form-control{
   box-shadow: none !important;
-  /*min-height: 80px;*/
   border: 1px solid #fff !important;
-  /*font-size: 48px !important;*/
 }
-
 
 
 .answer-item{
@@ -175,7 +173,7 @@ a:focus{
 
 
 .navbar .navbar-inner {
-    background: #f6f6f6;
+  background: #f6f6f6;
 	box-shadow: none;
 	border-radius: none;
 	border: none;
@@ -184,23 +182,23 @@ a:focus{
 
 
 .navbar .nav > li {
-    padding: 7px 45px 7px 0px;
+  padding: 7px 45px 7px 0px;
 
 }
 
 .navbar .nav > li:last-child{
-    padding: 7px 0px;
+  padding: 7px 0px;
 
 }
 
 .navbar .nav > li > a {
-    border-bottom: 1px #777 solid;
-    padding: 0px 0px 4px 0px;
+  border-bottom: 1px #777 solid;
+  padding: 0px 0px 4px 0px;
 }
 
 #login-buttons{
-    margin-top: -7px;
-    text-transform: uppercase;
+  margin-top: -7px;
+  text-transform: uppercase;
 }
 
 .nav .dropdown-toggle .caret {
@@ -209,80 +207,18 @@ a:focus{
     border-bottom-color: #777;
 }
 
-.nav .dropdown > a:hover .caret{
-    border-top-color: #777;
-    border-bottom-color: #777;
-}
 
-.nav .dropdown > .caret:hover {
-   border-top-color: #777;
-   border-bottom-color: #777;
- }
+/*.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, 
+.navbar .nav li.dropdown.open.active > .dropdown-toggle{
+  background-color: inherit;
 
-.dropdown-toggle:hover{
-    color: #777;
-    border-top-color: #777;
-    border-bottom-color: #777;
-
-}
-.nav .dropdown-toggle .caret:hover {
-    border-top-color: #777;
-    border-bottom-color: #777;
-}
-
-.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle{
-    background-color: inherit;
-
-}
+}*/
 #spinner { height: 300px }
 
 .question .edit-link{
     font-size: 12px;
 }
-/*.post {
-    *zoom: 1;
-    -webkit-transition: all 300ms 0ms;
-    -webkit-transition-delay: ease-in;
-    -moz-transition: all 300ms 0ms ease-in;
-    -o-transition: all 300ms 0ms ease-in;
-    transition: all 300ms 0ms ease-in;
-    position: relative;
-    opacity: 1;
-}
 
-.post:before, .post:after {
-    content: "";
-    display: table;
-}
-.post:after { clear: both }
-.post.invisible { opacity: 0 }
-.post .upvote {
-    display: block;
-    margin: 7px 12px 0 0;
-    float: left;
-}
-.post .post-content { float: left }
-.post .post-content h3 {
-    margin: 0;
-    line-height: 1.4;
-    font-size: 18px;
-}
-.post .post-content h3 a {
-    display: inline-block;
-    margin-right: 5px;
-}
-.post .post-content h3 span {
-    font-weight: normal;
-    font-size: 14px;
-    display: inline-block;
-    color: #aaaaaa;
-}
-.post .post-content p { margin: 0 }
-.post .discuss {
-    display: block;
-    float: right;
-    margin-top: 7px;
-}*/
 .comments {
     list-style-type: none;
     margin: 0;
@@ -331,124 +267,123 @@ a:focus{
   }
 }
 
-.confetti
-{
-width: 60px;
-height: 60px;
-margin-top: -100px;
--moz-border-radius: 30px;
--webkit-border-radius: 30px;
-border-radius: 30px;
-position:relative;
-background-color: #ff69b4;
-animation:confetti 7s;
-  -webkit-animation:confetti 7s;
-  animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-  -o-animation-iteration-count: infinite; /* Safari and Chrome */
-}
+.confetti{
+  width: 60px;
+  height: 60px;
+  margin-top: -100px;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  position:relative;
+  background-color: #ff69b4;
+  animation:confetti 7s;
+    -webkit-animation:confetti 7s;
+    animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite; /* Safari and Chrome */
+  }
 
 @-webkit-keyframes confetti {
-    from {top: 0px;}
-    to {top: 700px;}
+  from {top: 0px;}
+  to {top: 700px;}
 } 
 
 @keyframes confetti {
-    from {top: 0px;}
-    to {top: 700px;}
+  from {top: 0px;}
+  to {top: 700px;}
 }
 
 
 .confetti1 .confetti12 {
-animation-delay:1s;
--webkit-animation-delay:1s;
+  animation-delay:1s;
+  -webkit-animation-delay:1s;
 }
 
 .confetti1 {
-margin-left: 50px;
+  margin-left: 50px;
 }
 .confetti2 {
-margin-left: 300px;
+  margin-left: 300px;
 }
 
 .confetti3, .confetti6, .confetti20 {
-animation-delay:1.5s;
--webkit-animation-delay:1.5s;
+  animation-delay:1.5s;
+  -webkit-animation-delay:1.5s;
 }
 .confetti3 {
-margin-left: 800px;
+  margin-left: 800px;
 }
 .confetti4 {
-margin-left: 600px;
-animation-delay:3s;
--webkit-animation-delay:3s;
+  margin-left: 600px;
+  animation-delay:3s;
+  -webkit-animation-delay:3s;
 }
 .confetti5, .confetti6, .confetti7 {
-background-color: #fbfcfa;
+  background-color: #fbfcfa;
 }
 .confetti5 {
-margin-left: 700px;
+  margin-left: 700px;
 }
 .confetti6 {
-margin-left: 200px;
+  margin-left: 200px;
 }
 .confetti7, .confetti8 {
-animation-delay:4.5s;
--webkit-animation-delay:4.5s;
+  animation-delay:4.5s;
+  -webkit-animation-delay:4.5s;
 }
 .confetti17 {
-margin-left: 100px;
+  margin-left: 100px;
 }
 .confetti8, .confetti9, .confetti10, .confetti11 {
-background-color: #5e625c;
+  background-color: #5e625c;
 }
 .confetti8 {
-margin-left: 200px;
+  margin-left: 200px;
 }
 .confetti9 {
-margin-left: 900px;
+  margin-left: 900px;
 }
 .confetti10, .confetti14, .confetti18 {
-animation-delay:2.5s;
--webkit-animation-delay:2.5s;
+  animation-delay:2.5s;
+  -webkit-animation-delay:2.5s;
 }
 .confetti10 {
-margin-left: 550px;
+  margin-left: 550px;
 }
 .confetti11 {
-margin-left: 350;
-animation-delay:2s;
--webkit-animation-delay:2s;
+  margin-left: 350;
+  animation-delay:2s;
+  -webkit-animation-delay:2s;
 }
 .confetti12, .confetti13, .confetti14 {
-background-color: #f5d44d;
+  background-color: #f5d44d;
 }
 .confetti12 {
-margin-left: 350;
+  margin-left: 350;
 }
 .confetti13 {
-margin-left: 620;
-animation-delay:4s;
--webkit-animation-delay:4s;
+  margin-left: 620;
+  animation-delay:4s;
+  -webkit-animation-delay:4s;
 }
 .confetti14 {
-margin-left: 570;
+  margin-left: 570;
 }
 .confetti15, .confetti16, .confetti17, .confetti18 {
-background-color: #e44301;
+  background-color: #e44301;
 }
 .confetti15 {
-margin-left: 650px;
+  margin-left: 650px;
 }
 .confetti16 {
-margin-left: 100px;
-animation-delay:4s;
--webkit-animation-delay:4s;
+  margin-left: 100px;
+  animation-delay:4s;
+  -webkit-animation-delay:4s;
 }
 .confetti17, .confetti21 {
-animation-delay:.5s;
--webkit-animation-delay:.5s;
+  animation-delay:.5s;
+  -webkit-animation-delay:.5s;
 }
 .confetti17 {
 margin-left: 250px;
