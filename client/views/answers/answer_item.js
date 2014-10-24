@@ -1,22 +1,32 @@
 getRandom = function(currentId) {
     // make sure next question is not the same as one just completed
-    var alreadyAnswered = CorrectAnswers.find({}, {fields: {question_id: 1}}).fetch();
-    console.log('these are already answered');
-    already_ids = _.flatten(_.pluck(alreadyAnswered, 'question_id'), true);
-    console.log(already_ids);
-    var questions = Questions.find({}, {fields: {_id: 1}}).fetch();
-    var question_ids = _.flatten(_.pluck(questions, '_id'), true);
+    
+    var alreadyAnswered = CorrectAnswers.find({}, {fields: {question_id: 1}}).fetch()
+    ,   answeredIds = _.flatten(_.pluck(alreadyAnswered, 'question_id'), true)
+    ,   questions = Questions.find({}, {fields: {_id: 1}}).fetch()
+    ,   questionIds = _.flatten(_.pluck(questions, '_id'), true)
+    ,   eligibleIds = _.difference(questionIds, answeredIds, [currentId])
+    ,   randomId;
+    // console.log('these are already answered');
+    // already_ids = _.flatten(_.pluck(alreadyAnswered, 'question_id'), true);
+    // console.log(already_ids);
+    // var questions = Questions.find({}, {fields: {_id: 1}}).fetch();
+    // var question_ids = _.flatten(_.pluck(questions, '_id'), true);
 
-    eligible_ids = _.difference(question_ids, already_ids, [currentId]);
+    // eligible_ids = _.difference(question_ids, already_ids, [currentId]);
 
-    if (!eligible_ids.length){
-      console.log('user has answered all of the questions');
-      Router.go('allAnswered');
+    if (!eligibleIds.length){
+      // user has answered all the questions
+      if (_.contains(answeredIds, currentId)){
+        Router.go('allAnswered');
+      } else {
+        console.log('user has answered all of the questions but one');
+      // user has answered all of the questions but skipped the last one
+        return currentId;
+      }
     }
-    var random_id = eligible_ids[Math.floor(Math.random() * eligible_ids.length)];
-    console.log('these are the eligible ids');
-    console.log(eligible_ids);
-    return random_id;
+    randomId = eligibleIds[Math.floor(Math.random() * eligibleIds.length)];
+    return randomId;
 };
 
 clearAnswer = function(){
@@ -67,6 +77,7 @@ Template.answerItem.events({
 
   'click .skip-question': function(){
     var randomId = getRandom(this._id);
+    clearAnswer();
     Router.go('questionPage', {_id: randomId});
   },
 
