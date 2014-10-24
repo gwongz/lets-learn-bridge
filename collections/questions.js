@@ -12,6 +12,43 @@ var cleanAnswer = function(answer){
   return submitted.split(' ');
 };
 
+var isAccepted = function(submitted, correct, question){
+  var alsoAccepted;
+  if (_.isEmpty(_.difference(submitted, correct))){
+    return true;
+  }
+
+  if (question.kind == 'boolean'){
+    if (_.contains(correct, 'yes') || _.contains(correct, 'true')){
+      alsoAccepted = ['y', 'true'];
+    } else {
+      alsoAccepted = ['n', 'false'];
+    }
+
+    return _.contains(alsoAccepted, submitted[0]);
+  }
+
+  if (question.kind == 'suits'){
+    // need to accept 'heart for hearts'
+    var suits = ['heart', 'diamond', 'club', 'spade'];
+    console.log('submitted before turning plural');
+    console.log(submitted)
+    _.each(submitted, function(suit, index){
+      console.log(index);
+      if (_.contains(suits, suit)){
+        submitted[index] = suit + 's';
+        suit = suit + 's';
+        console.log(suit)
+      }
+    });
+    console.log('submitted after loop');
+    console.log(submitted);
+
+  }
+
+
+};
+
 
 Meteor.methods({
 
@@ -89,19 +126,17 @@ Meteor.methods({
     }
 
     var submitted = cleanAnswer(answerAttributes.answer);
-    console.log('submitted');
-    console.log(submitted);
-
     var question = Questions.findOne(answerAttributes.question);
     var correct = cleanAnswer(question.answer);
+    var accepted = isAccepted(submitted, correct, question);
 
-    console.log('correct answer');
-    console.log(correct);
-    var alsoCorrect;
-
-    if (!_.isEmpty(_.difference(submitted, correct))){
+    if (!accepted){
       throwError(422, 'Incorrect answer');
     }
+
+    // if (!_.isEmpty(_.difference(submitted, correct))){
+    //   throwError(422, 'Incorrect answer');
+    // }
 
   },
 
