@@ -91,52 +91,47 @@ Meteor.methods({
   },
 
   question: function(questionAttributes) {
-    var user = Meteor.user();
-      // similarQuestion = Questions.findOne({url: postAttributes.url});
+    var user = Meteor.user()
+    ,   question
+    ,   questionId;
 
     // ensure the user is logged in
     if (!user)
-      throwError(401, "You need to log in to post a question");
+      throwError(401, 'You need to log in to post a question');
 
-    // ensure the post has a title
+    // ensure there is a question and answer provided
     if (!questionAttributes.title)
       throwError(422, 'Please enter a question');
 
-  	if (!questionAttributes.answer)
-  		throwError(422, 'Please provide an answer');
+    if (!questionAttributes.answer)
+      throwError(422, 'Please provide an answer');
 
-    var question = _.extend(_.pick(questionAttributes, 'title', 'answer', 'explanation'), {
+    question = _.extend(_.pick(questionAttributes, 'title', 'answer', 'explanation'), {
       userId: user._id,
       author: user.username,
       submitted: new Date().getTime(),
     });
 
-    var questionId = Questions.insert(question);
+    questionId = Questions.insert(question);
     // set the right kind attribute on the question
     Meteor.call('questionKind', questionId);
     return questionId;
   },
 
   checkAnswer: function(answerAttributes){
-    console.log(answerAttributes.answer);
-    console.log('this is id of question being answered');
-    console.log(answerAttributes.question);
     if (!answerAttributes.answer){
       throwError(422, 'Please provide an answer');
     }
 
-    var submitted = cleanAnswer(answerAttributes.answer);
-    var question = Questions.findOne(answerAttributes.question);
-    var correct = cleanAnswer(question.answer);
-    var accepted = isAccepted(submitted, correct, question);
+    var submitted = cleanAnswer(answerAttributes.answer)
+    ,   question = Questions.findOne(answerAttributes.question)
+    ,   correct = cleanAnswer(question.answer)
+    ,   accepted = isAccepted(submitted, correct, question);
 
     if (!accepted){
       throwError(422, 'Incorrect answer');
     }
 
-    // if (!_.isEmpty(_.difference(submitted, correct))){
-    //   throwError(422, 'Incorrect answer');
-    // }
 
   },
 
