@@ -3,7 +3,8 @@
   "dependencies": {
     "basePackages": {
       "spin": {},
-      "accounts-ui-bootstrap-dropdown": {}
+      "accounts-ui-bootstrap-dropdown": {},
+      "event-hooks": {}
     },
     "packages": {
       "spin": {
@@ -15,6 +16,11 @@
         "git": "https://github.com/erobit/meteor-accounts-ui-bootstrap-dropdown.git",
         "tag": "v0.8.3",
         "commit": "a7af8a52e4e74db020a69b158a8f992797b8b0b0"
+      },
+      "event-hooks": {
+        "git": "https://github.com/BenjaminRH/meteor-event-hooks.git",
+        "tag": "v1.4.3",
+        "commit": "ba4f3d7887748458618d29615492906f0c88d31c"
       }
     }
   }
