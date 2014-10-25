@@ -1,6 +1,7 @@
 <template name="questionItem">
 	<div class="question">
-	<h3>{{title}}
+	<h3>
+		{{title}}
 		{{#if currentUser}}
 			{{#if canEdit}}
     		<span class="edit-link"><a href="{{pathFor 'questionEdit'}}">Edit question</a></span>
