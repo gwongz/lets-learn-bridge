@@ -8,7 +8,7 @@ Template.questionEdit.events({
       answer: $(e.target).find('[name=answer]').val(),
       title: $(e.target).find('[name=title]').val(),
       explanation: $(e.target).find('[name=explanation]').val()
-    }
+    };
 
     Questions.update(currentQuestionId, {$set: questionProperties}, function(error) {
       if (error) {
@@ -22,7 +22,7 @@ Template.questionEdit.events({
 
   'click .delete': function(e) {
     e.preventDefault();
-    if (confirm("Delete this question?")) {
+    if (confirm('Delete this question?')) {
       var currentQuestionId = this._id;
       Questions.remove(currentQuestionId);
       Router.go('questionsList');
