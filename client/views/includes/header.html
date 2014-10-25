@@ -7,18 +7,19 @@
 				<span class="icon-bar"></span>
 			</a>
 
-			<!-- <a class="brand" href="{{pathFor 'questionsList'}}">All questions</a> -->
-
 			<div class="nav-collapse collapse">
 				<ul class="nav">
-					<!-- {{#if currentUser}} -->
 					<li>
-					<a href="{{pathFor 'questionRandom'}}" class="reshuffle">RESHUFFLE</a></li>
+						<a href="{{pathFor 'questionRandom'}}" class="reshuffle">RESHUFFLE</a></li>
 					<li>
-					<a href="{{pathFor 'questionSubmit'}}">SUBMIT A QUESTION</a>
+						<a href="{{pathFor 'questionSubmit'}}">SUBMIT A QUESTION</a>
 					</li>
-					<!-- <li>{{> loginButtons}}</li> -->
-					<!-- {{/if}} -->
+					{{#if currentUser}}
+					<li>
+						<a href="{{pathFor 'account' _id=currentUser._id}}" class="account">ACCOUNT</a>
+					</li>
+					{{/if}}
+
 				</ul>
 				<ul class="nav pull-right">
 					<li>{{> loginButtons}}</li>

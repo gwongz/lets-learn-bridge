@@ -1,0 +1,17 @@
+<template name="account">
+	<div>
+	Good {{timeOfDay}}, {{username}}
+	</div>
+	
+	<div>
+	Your questions
+	{{#if questions.count}}
+		{{#each questions}}
+			{{>questionItem}}
+		{{/each}}
+	{{else}}
+		You haven't added any questions. Submit your first one!
+	{{/if}}
+	</div>
+
+</template>
