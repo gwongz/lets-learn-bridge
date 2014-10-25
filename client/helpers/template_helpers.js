@@ -11,9 +11,14 @@ Template.registerHelper('timeOfDay', function(){
 	if (hours > 18)
 		return 'evening';
 	else if (hours >= 12)
-		return 'afternoon'
+		return 'afternoon';
 	else
 		return 'morning';
+});
+
+Template.registerHelper('isSuperuser', function(){
+	var currentUser = Meteor.userId();
+	return isSuperuser(currentUser);
 });
 
 
