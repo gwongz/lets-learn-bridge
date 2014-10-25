@@ -1,23 +1,22 @@
 Meteor.subscribe('questions');
+Meteor.subscribe('userData');
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
-
-
-
     // code to run on server at startup
   });
 }
 
+// code to run on client at startup
 if (Meteor.isClient){
   Meteor.startup(function(){
-    // code to run on client at startup
+    // postLogin hook
+    Deps.autorun(function(){
+      if(Meteor.userId()){
+        Meteor.call('setProfile');
+      }
+    });
   });
 }
 
-Template.header.events({
-	'click .reshuffle': function(){
-		// clear the correct answers collection to restart 
-		CorrectAnswers.remove({});
-	},
-});
+
