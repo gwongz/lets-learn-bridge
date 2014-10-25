@@ -12,6 +12,7 @@ if (Meteor.isClient){
   Meteor.startup(function(){
     // postLogin hook
     Deps.autorun(function(){
+      // postLogin hook
       if(Meteor.userId()){
         Meteor.call('setProfile');
       }
