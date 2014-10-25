@@ -1,7 +1,7 @@
 // displaying errors on client 
 Errors = new Meteor.Collection(null);
 
-throwError = function(code, message){
+throwError = function(message){
   Errors.insert({message: message, seen: false});
 
 };

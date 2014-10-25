@@ -1,17 +1,16 @@
 <template name="account">
-	<div>
-	Good {{timeOfDay}}, {{username}}
-	</div>
+	<div class="account-page">
+		<p>Good {{timeOfDay}}, {{username}}</p>
+		
 	
-	<div>
-	Your questions
-	{{#if questions.count}}
-		{{#each questions}}
-			{{>questionItem}}
-		{{/each}}
-	{{else}}
-		You haven't added any questions. Submit your first one!
-	{{/if}}
+		{{#if questions.count}}
+			{{#each questions}}
+				{{>questionItem}}
+			{{/each}}
+		{{else}}
+			You haven't added any questions. <a href="{{pathFor 'questionSubmit'}}">Submit</a> your first one!
+		{{/if}}
 	</div>
 
 </template>
+
