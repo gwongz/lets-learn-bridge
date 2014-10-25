@@ -103,7 +103,35 @@ a:focus{
   outline: none;
 }
 
-#main{
+.navbar { margin-bottom: 10px }
+
+
+.navbar .navbar-inner {
+  background: #f6f6f6;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  padding: 0px;
+}
+
+
+.navbar .nav > li {
+  padding: 7px 45px 7px 0px;
+
+}
+
+.navbar .nav > li:last-child{
+  padding: 7px 0px;
+
+}
+
+.navbar .nav > li > a {
+  border-bottom: 1px #777 solid;
+  padding: 0px 0px 4px 0px;
+}
+
+/* App outer layer */
+.layout{
     min-height: 400px;
 }
 
@@ -161,6 +189,8 @@ a:focus{
 	box-shadow: none;
 }
 
+/* Question items and pages */
+
 .question{
   padding: 2px 20px 2px 0px;
 }
@@ -169,7 +199,8 @@ a:focus{
   line-height: 1.6em;
 }
 
-.main, .post, .comments li, .comment-form {
+/* Forms */
+.main {
     background: #fff;
     border-radius: 3px;
     padding: 10px;
@@ -180,32 +211,7 @@ a:focus{
     background-color: #efefef;
 }
 
-.navbar { margin-bottom: 10px }
 
-
-.navbar .navbar-inner {
-  background: #f6f6f6;
-	box-shadow: none;
-	border-radius: none;
-	border: none;
-	padding: 0px;
-}
-
-
-.navbar .nav > li {
-  padding: 7px 45px 7px 0px;
-
-}
-
-.navbar .nav > li:last-child{
-  padding: 7px 0px;
-
-}
-
-.navbar .nav > li > a {
-  border-bottom: 1px #777 solid;
-  padding: 0px 0px 4px 0px;
-}
 
 #login-buttons{
   margin-top: -7px;
@@ -219,11 +225,6 @@ a:focus{
 }
 
 
-/*.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, 
-.navbar .nav li.dropdown.open.active > .dropdown-toggle{
-  background-color: inherit;
-
-}*/
 #spinner { height: 300px }
 
 .question .edit-link{
