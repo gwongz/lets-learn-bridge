@@ -1,16 +1,26 @@
 <!-- app's outer layout -->
 <template name="layout">
-  <div class="container">
+  <div class="container layout">
     {{> header}}
     {{> errors}}
 
-    <div id="main" class="layout row-fluid">
+    <div id="main" class="row-fluid">
     	<!-- allows templates to be renderd in the body tag -->
       {{>yield}}
+    
+
     </div>
 
-    {{>footer}}
+    <div class="push"></div>
+
+
+    
 
   </div>
+
+  {{>footer}}
+
+  
+
 
 </template>
