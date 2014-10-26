@@ -13,7 +13,7 @@
 
 html, body {
     font-family: 'proxima_novalight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 200;
+    font-weight: 400;
     /*margin: 50px 0;*/
     padding: 25px 0;
     -webkit-user-select: auto;
@@ -35,7 +35,7 @@ html, body {
 
 h3, input, textarea, a, p, footer{
     font-family: 'proxima_novalight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 200;
+    font-weight: 400;
 
 }
 
