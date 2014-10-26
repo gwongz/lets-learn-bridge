@@ -6,14 +6,13 @@ Template.registerHelper('canEdit', function(){
 
 Template.registerHelper('timeOfDay', function(){
 	var hours = new Date().getHours();
-	console.log('this is hours');
-	console.log(hours);
-	if (hours > 18)
+	if (hours > 18){
 		return 'evening';
-	else if (hours >= 12)
+	} else if (hours >= 12){
 		return 'afternoon';
-	else
+	} else {
 		return 'morning';
+	}
 });
 
 Template.registerHelper('isSuperuser', function(){
