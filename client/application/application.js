@@ -1,4 +1,4 @@
-Meteor.subscribe('questions');
+Meteor.subscribe('questions', {fields: {'answer': 0}});
 Meteor.subscribe('userData');
 
 if (Meteor.isServer) {
