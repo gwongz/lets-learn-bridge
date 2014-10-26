@@ -129,6 +129,18 @@ Meteor.methods({
 
   },
 
+  getAnswer: function(questionId){
+    // return full question for template 
+    var question = Questions.findOne(questionId);
+    return question.answer;
+  },
+
+  getExplanation: function(questionId){
+    var question = Questions.findOne(questionId);
+    return question.explanation;
+
+  }
+
 
 });
 

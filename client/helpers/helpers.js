@@ -24,8 +24,12 @@ getRandom = function(currentId) {
 };
 
 clearAnswer = function(){
+  console.log('clear answer is happening on page redirect');
   // set questionPage template back to default 
   $('input[name=answer]').val('');
   $('.correct, .incorrect').addClass('hidden');
   $('.revealed-answer').addClass('hidden');
+  Session.set('answer', null);
+  Session.set('explanation', null);
 };
+

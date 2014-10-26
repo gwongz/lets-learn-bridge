@@ -16,6 +16,17 @@ Template.answerItem.events({
       } else {
         $('.correct').removeClass('hidden');
         $('.incorrect').addClass('hidden');
+        // Meteor.call('getAnswer', this._id, function(err, response){
+        //   console.log('this is value of answer');
+        //   console.log(response);
+        //   Session.set('answer', response);
+        //   // return response;
+        // });
+
+        Meteor.call('getExplanation', this._id, function(err, response){
+          Session.set('explanation', response);
+        });
+        
         logAnswer(answerAttributes.question);
         var randomId = getRandom(answerAttributes.question);
         setTimeout(function(){
@@ -23,7 +34,7 @@ Template.answerItem.events({
           Router.go('questionPage', {_id: randomId});
         }, 2000);
       }
-        
+            
     });
 
   },
