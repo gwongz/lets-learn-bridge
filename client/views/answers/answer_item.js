@@ -9,14 +9,11 @@ Template.answerItem.events({
         question: this._id
     };
 
-    console.log('submitting answer');
     Meteor.call('validateAnswer', answerAttributes, function(error){
       if (error){
-        console.log('there was an error');
         $('.incorrect').removeClass('hidden');
         $('.correct').addClass('hidden');
       } else {
-        console.log('no error was thrown by checkanswer');
         $('.correct').removeClass('hidden');
         $('.incorrect').addClass('hidden');
         logAnswer(answerAttributes.question);
@@ -24,7 +21,6 @@ Template.answerItem.events({
         setTimeout(function(){
           clearAnswer();
           Router.go('questionPage', {_id: randomId});
-
         }, 2000);
       }
         
