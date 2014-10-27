@@ -42,7 +42,7 @@ Template.answerItem.events({
 
   'click .skip-question': function(){
     var randomId = getRandom(this._id);
-    clearAnswer();
+    // clearAnswer happens onBeforeAction of questionPage
     Router.go('questionPage', {_id: randomId});
   },
 

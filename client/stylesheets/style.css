@@ -303,13 +303,17 @@ a:focus{
   }
 }
 
-.confetti{
-  width: 60px;
-  height: 60px;
+/* Confetti feature modified from:
+http://rachelkozemczak.com/2013/12/31/a-simple-confetti-animation-built-entirely-with-css3/
+*/
+
+/*.confetti{
+  width: 17px;
+  height: 17px;
   margin-top: -100px;
-  -moz-border-radius: 30px;
-  -webkit-border-radius: 30px;
-  border-radius: 30px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
   position:relative;
   background-color: #ff69b4;
   animation:confetti 7s;
@@ -434,10 +438,17 @@ background-color: #a9954d;
 margin-left: 450px;
 }
 .confetti20 {
-margin-left: 850px;
+margin-left: 80px;
 }
 .confetti21 {
 margin-left: 200px;
 }
+
+.confetti-container{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #111
+}*/
 
 
