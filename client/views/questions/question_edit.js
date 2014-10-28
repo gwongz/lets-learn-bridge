@@ -1,19 +1,27 @@
 Template.questionEdit.events({
   'submit form': function(e) {
     e.preventDefault();
+    clearErrors();
 
     var currentQuestionId = this._id;
 
     var questionProperties = {
       answer: $(e.target).find('[name=answer]').val(),
       title: $(e.target).find('[name=title]').val(),
-      explanation: $(e.target).find('[name=explanation]').val()
+      explanation: $(e.target).find('[name=explanation]').val(),
+      url: $(e.target).find('[name=url]').val()
     };
+
+    if (!questionProperties.title)
+      return throwError('Please provide a question');
+    if (!questionProperties.answer)
+      return throwError('Please provide an answer');
+
 
     Questions.update(currentQuestionId, {$set: questionProperties}, function(error) {
       if (error) {
         // display the error to the user
-        alert(error.reason);
+        return throwError(error.reason);
       } else {
         Router.go('questionPage', {_id: currentQuestionId});
       }
@@ -40,6 +48,6 @@ Template.questionEdit.helpers({
   explanation: function(){
     return Session.get('explanation');
   }
-})
+});
 
 

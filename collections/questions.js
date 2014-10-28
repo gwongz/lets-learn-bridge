@@ -94,12 +94,12 @@ Meteor.methods({
 
     // ensure there is a question and answer provided
     if (!questionAttributes.title)
-      throw new Meteor.Error('Please enter a question');
+      throw new Meteor.Error('Please provide a question');
 
     if (!questionAttributes.answer)
       throw new Meteor.Error('Please provide an answer');
 
-    question = _.extend(_.pick(questionAttributes, 'title', 'answer', 'explanation'), {
+    question = _.extend(_.pick(questionAttributes, 'title', 'answer', 'explanation', 'url'), {
       userId: user._id,
       author: user.username,
       submitted: new Date().getTime(),

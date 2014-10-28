@@ -2,12 +2,20 @@ Template.answerItem.events({
 
   'submit form.answer': function(e) {
     e.preventDefault();
+    clearErrors();
 
-    // var question = Session.get('selected_question');
+    var submission = $(e.target).find('[name=answer]').val();
+
     var answerAttributes = {
-        answer: $(e.target).find('[name=answer]').val(),
+        answer: submission,
         question: this._id
     };
+
+    if (!submission){
+      return throwError('Please submit an answer or skip the question');
+    }
+
+
 
     Meteor.call('validateAnswer', answerAttributes, function(error){
       if (error){
