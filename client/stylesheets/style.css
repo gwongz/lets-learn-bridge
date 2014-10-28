@@ -41,6 +41,7 @@ h3, input, textarea, a, p, footer{
 
 p{
   padding: 10px 0;
+  margin: auto;
 }
 
 footer p{
