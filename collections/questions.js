@@ -90,14 +90,14 @@ Meteor.methods({
 
     // ensure the user is logged in
     if (!user)
-      throwError(401, 'You need to log in to post a question');
+      throw new Meteor.Error('You need to log in to post a question');
 
     // ensure there is a question and answer provided
     if (!questionAttributes.title)
-      throwError(422, 'Please enter a question');
+      throw new Meteor.Error('Please enter a question');
 
     if (!questionAttributes.answer)
-      throwError(422, 'Please provide an answer');
+      throw new Meteor.Error('Please provide an answer');
 
     question = _.extend(_.pick(questionAttributes, 'title', 'answer', 'explanation'), {
       userId: user._id,

@@ -2,6 +2,9 @@ Template.questionSubmit.events({
   'submit form': function(e) {
     e.preventDefault();
 
+    // clear any client side errors that may have been thrown by earlier submission
+    clearErrors();
+
     var question = {
       answer: $(e.target).find('[name=answer]').val(),
       title: $(e.target).find('[name=title]').val(),
@@ -10,9 +13,9 @@ Template.questionSubmit.events({
 
     Meteor.call('question', question, function(error, id) {
       if (error)
-        return alert(error.reason);
-
-      Router.go('questionPage', {_id: id});
+        throwError(error.error);
+      else
+        Router.go('questionPage', {_id: id});
     });
 
 

@@ -7,9 +7,10 @@ Template.errors.helpers({
 });
 
 Template.error.rendered = function(){
-	// 'this' refers to current template instance
+	
 	// 'this.data' is the object that is currently being rendered
 	var error = this.data;
+	// make sure error is 'seen' even when there is page redirect after throwing it
 	Meteor.defer(function(){
 		Errors.update(error._id, {$set: {seen:true}});
 	});
