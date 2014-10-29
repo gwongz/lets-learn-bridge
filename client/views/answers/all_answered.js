@@ -1,39 +1,35 @@
-// Confetti canvas from http://codepen.io/linrock/pen/Amdhr
+/* Confetti canvas copyright LinMiao Xu: 
 
-showConfetti = function(){
+http://codepen.io/linrock/details/Amdhr
+http://codepen.io/linrock/pen/Amdhr
+
+*/
+var showConfetti = function(){
   NUM_CONFETTI = 350;
   COLORS = [[85,71,106], [174,61,99], [219,56,83], [244,92,68], [248,182,70]];
   PI_2 = 2*Math.PI;
 
   var canvas;
-
   canvas = document.getElementById('confetti');
   var context;
-
   context = canvas.getContext('2d');
   window.w = 0;
   window.h = 0;
-
   var resizeWindow;
 
   // make sure confetti does not exceed width of app layout
-  
-
-
   resizeWindow = function() {
-    console.log('resize window happening');
     var container = $('#main').css('width');
     console.log('container');
     console.log(container);
     if (container){
-      container = parseFloat(container.replace('px', ''))
+      container = parseFloat(container.replace('px', ''));
     } else {
       container = canvas.width;
     }
 
     window.w = canvas.width = window.innerWidth = container;
     window.h = canvas.height = window.innerHeight;
-  // return window.h = canvas.height = window.innerHeight;
   };
 
   resizeWindow();
@@ -48,7 +44,6 @@ showConfetti = function(){
   };
 
   var drawCircle;
-
   drawCircle = function(x, y, r, style) {
     context.beginPath();
     context.arc(x, y, r, 0, PI_2, false);
@@ -126,7 +121,8 @@ showConfetti = function(){
     return _results;
   })();
 
-  step = function() {
+  var step = function() {
+    console.log('step called');
     var c, _i, _len, _results;
     if (Session.get('confetti')){
       requestAnimationFrame(step);
@@ -143,16 +139,9 @@ showConfetti = function(){
   };
 
   step();
-
-  // var stopConfetti = function(){
-  //   console.log('stop confetti happening');
-  //   Session.set('confetti', false);
-  // };
-
-  
 };
 
-stopConfetti = function(){
+var stopConfetti = function(){
   console.log('stop confetti happening');
   Session.set('confetti', false);
 };
@@ -160,10 +149,8 @@ stopConfetti = function(){
 Template.allAnswered.rendered = function() {
    // clear the Correct Answers collection so user can restart via reshuffle
    CorrectAnswers.remove({});
-   console.log('showing confetti');
    Session.set('confetti', true);
    showConfetti();
-   // window.onbeforeunload = stopConfetti;
 };
 
 Template.allAnswered.destroyed = function(){
