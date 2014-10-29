@@ -24,8 +24,6 @@ Template.answerItem.events({
       return throwError('Please submit an answer or skip the question');
     }
 
-
-
     Meteor.call('validateAnswer', answerAttributes, function(error){
       if (error){
         Session.set('answerStatus', 'incorrect');
@@ -69,7 +67,7 @@ Template.answerItem.helpers({
 
   },
 
-  answerResponse: function(){
+  answerStatus: function(){
     if (Session.get('answerStatus') === 'incorrect'){
       return 'incorrectAnswer';
     } else if (Session.get('answerStatus') === 'correct'){
