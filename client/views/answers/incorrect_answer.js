@@ -1,28 +1,20 @@
-
-
-
 Template.incorrectAnswer.events({
-	'click .hint': function(){
+  'click .hint': function(){
 
     Meteor.call('getAnswer', this._id, function(err, response){
-      console.log('this is value of answer');
-      console.log(response);
       Session.set('answer', response);
-      // return response;
     });
 
-	$('.revealed-answer').removeClass('hidden');
+  $('.revealed-answer').removeClass('hidden');
 
-	}
+  }
 });
 
 Template.incorrectAnswer.helpers({
-	answer: function(){
-		return Session.get('answer');
-	},
+  // not great to use the Session here - maybe replace with reactive dict?
+  answer: function(){
+    return Session.get('answer');
+  },
 });
 
-Template.incorrectAnswer.rendered=function(){
 
-
-};

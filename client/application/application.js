@@ -10,13 +10,14 @@ if (Meteor.isServer) {
 // code to run on client at startup
 if (Meteor.isClient){
   Meteor.startup(function(){
-    // postLogin hook
     Deps.autorun(function(){
       // postLogin hook
       if(Meteor.userId()){
         Meteor.call('setProfile');
       }
     });
+
+    
   });
 }
 

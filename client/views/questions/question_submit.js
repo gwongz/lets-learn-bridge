@@ -2,7 +2,7 @@ Template.questionSubmit.events({
   'submit form': function(e) {
     e.preventDefault();
 
-    // clear any client side errors that may have been thrown by earlier submission
+    // clear any client side errors that may have been rendered in earlier submission
     clearErrors();
 
     var question = {
@@ -13,13 +13,12 @@ Template.questionSubmit.events({
     };
 
     Meteor.call('question', question, function(error, id) {
-      if (error)
+      if (error){
         return throwError(error.error);
-      else
+      } else {
         Router.go('questionPage', {_id: id});
+      }
     });
-
-
   }
 });
 

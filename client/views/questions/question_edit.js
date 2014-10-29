@@ -44,10 +44,6 @@ Template.questionEdit.helpers({
   answer: function(){
     return Session.get('answer');
   },
-
-  explanation: function(){
-    return Session.get('explanation');
-  }
 });
 
 

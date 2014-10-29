@@ -81,11 +81,8 @@ a:focus{
     background-color: #fff;
     border: solid 2px #ff6759;
     text-transform: uppercase;
-    /*background: #ff6759;*/
-    /*border-color: #ff6759;*/
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     background-image: none;
-    /*outline: none;*/
 }
 
 .nav .dropdown-toggle:hover .caret, .nav .dropdown-toggle:focus .caret {
@@ -111,7 +108,6 @@ a:focus{
 }
 
 .navbar { margin-bottom: 10px }
-
 
 .navbar .navbar-inner {
   background: #f6f6f6;
@@ -198,13 +194,12 @@ a:focus{
   width: 80%;
   min-height: 50px;
   font-size: 16px;
-	/*width: auto;*/
   line-height: inherit;
 
 }
 
 .controls textarea{
-    width: 60%;
+  width: 60%;
 
 }
 
@@ -215,11 +210,15 @@ a:focus{
 /* Question items and pages */
 
 .question{
-  padding: 2px 20px 2px 0px;
+  padding: 2px 20px 2px 0;
 }
 
 .question h3{
   line-height: 1.6em;
+}
+
+.question .edit-link{
+    font-size: 12px;
 }
 
 /* Forms */
@@ -227,7 +226,6 @@ a:focus{
     background: #fff;
     border-radius: 3px;
     padding: 10px;
-    /*margin-bottom: 10px;*/
 }
 
 .main .controls input{
@@ -250,48 +248,13 @@ a:focus{
 
 #spinner { height: 300px }
 
-.question .edit-link{
-    font-size: 12px;
-}
 
-.comments {
-    list-style-type: none;
-    margin: 0;
-}
-.comments li h4 {
-    font-size: 16px;
-    margin: 0;
-}
-.comments li h4 .date {
-    font-size: 12px;
-    font-weight: normal;
-}
-.comments li h4 a { font-size: 12px }
-.comments li p:last-child { margin-bottom: 0 }
-.dropdown-menu span {
-    display: block;
-    padding: 3px 20px;
-    clear: both;
-    line-height: 20px;
-    color: #bbb;
-    white-space: nowrap;
-}
-.load-more {
-    display: block;
-    border-radius: 3px;
-    background: rgba(0, 0, 0, 0.05);
-    text-align: center;
-    height: 60px;
-    line-height: 60px;
-    margin-bottom: 10px;
-}
-.load-more:hover {
-    text-decoration: none;
-    background: rgba(0, 0, 0, 0.1);
-}
+
+/* Media Queries */
 
 @media (max-width: 979px){
-  .nav-collapse .nav > li > a:hover, .nav-collapse .nav > li > a:focus, .nav-collapse .dropdown-menu a:hover, .nav-collapse .dropdown-menu a:focus {
+  .nav-collapse .nav > li > a:hover, .nav-collapse .nav > li > a:focus, 
+  .nav-collapse .dropdown-menu a:hover, .nav-collapse .dropdown-menu a:focus {
    background-color: inherit;
   }
 

@@ -1,4 +1,12 @@
 // global functions used in client views
+
+// keep track of which questions player has already answered correctly
+CorrectAnswers = new Meteor.Collection(null);
+
+logAnswer = function(id){
+    CorrectAnswers.insert({question_id: id});
+};
+
 getRandom = function(currentId) {
     // make sure next question is not the same as one just completed
     
@@ -18,9 +26,10 @@ getRandom = function(currentId) {
       // user has answered all of the questions but skipped the last one
         return currentId;
       }
-    }
+    } else {
     randomId = eligibleIds[Math.floor(Math.random() * eligibleIds.length)];
     return randomId;
+    }
 };
 
 
