@@ -1,24 +1,16 @@
 <template name="answerItem">
-		<form class="answer">
-			<div class="answer-item">
-				<input name="answer" type="text" class="form-control" value="" autofocus="autofocus" maxlength="45" placeholder="{{is_num}}"/>
-			</div>
-		
-			<div class="control-group">
-        	    <input type="submit" value="Submit" class="btn btn-default"/>
-        	    <input type="button" value="Skip" class="btn btn-default skip-question"/>
-    		</div>
+	<form class="answer">
+		<div class="answer-item">
+			<input name="answer" type="text" class="form-control" value="" autofocus="autofocus" maxlength="45" placeholder="{{is_num}}"/>
+		</div>
 
-    		<div class="control-group">
-    			
-    		</div>
-		</form>
+		<div class="control-group">
+			<input type="submit" value="Submit" class="btn btn-default"/>
+			<input type="button" value="Skip" class="btn btn-default skip-question"/>
+		</div>
 
-	<div class="hidden correct">
-		{{>correctAnswer}}
-	</div>
+	</form>
 
-	<div class="hidden incorrect">
-		{{>incorrectAnswer}}
-	</div>
+	{{> Template.dynamic template=answerResponse data=this}}
+
 </template>

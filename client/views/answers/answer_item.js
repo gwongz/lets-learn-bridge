@@ -1,8 +1,17 @@
+var clearAnswer = function(){
+  // set questionPage template back to default 
+  $('input[name=answer]').val('');
+  $('.revealed-answer').addClass('hidden');
+  Session.set('answer', null);
+  Session.set('answerStatus', null);
+};
+
 Template.answerItem.events({
 
   'submit form.answer': function(e) {
     e.preventDefault();
     clearErrors();
+    Session.set('answerStatus', null);
 
     var submission = $(e.target).find('[name=answer]').val();
 
@@ -19,16 +28,9 @@ Template.answerItem.events({
 
     Meteor.call('validateAnswer', answerAttributes, function(error){
       if (error){
-        $('.incorrect').removeClass('hidden');
-        $('.correct').addClass('hidden');
+        Session.set('answerStatus', 'incorrect');
       } else {
-        $('.correct').removeClass('hidden');
-        $('.incorrect').addClass('hidden');
-
-        Meteor.call('getExplanation', this._id, function(err, response){
-          Session.set('explanation', response);
-        });
-        
+        Session.set('answerStatus', 'correct');
         logAnswer(answerAttributes.question);
         var randomId = getRandom(answerAttributes.question);
         setTimeout(function(){
@@ -50,7 +52,7 @@ Template.answerItem.events({
 
   'click .skip-question': function(){
     var randomId = getRandom(this._id);
-    // clearAnswer happens onBeforeAction of questionPage
+    clearAnswer();
     Router.go('questionPage', {_id: randomId});
   },
 
@@ -66,4 +68,15 @@ Template.answerItem.helpers({
       }
 
   },
+
+  answerResponse: function(){
+    if (Session.get('answerStatus') === 'incorrect'){
+      return 'incorrectAnswer';
+    } else if (Session.get('answerStatus') === 'correct'){
+      return 'correctAnswer';
+    } else {
+      return;
+    }
+  },
+
 });

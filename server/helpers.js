@@ -124,13 +124,6 @@ Meteor.methods({
     return question.answer;
   },
 
-  getExplanation: function(questionId){
-    var question = Questions.findOne(questionId);
-    return question.explanation;
-
-  }
-
-
 });
 
 

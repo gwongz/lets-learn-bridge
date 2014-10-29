@@ -1,3 +1,6 @@
+
+
+
 Template.incorrectAnswer.events({
 	'click .hint': function(){
 
@@ -6,10 +9,6 @@ Template.incorrectAnswer.events({
       console.log(response);
       Session.set('answer', response);
       // return response;
-    });
-
-    Meteor.call('getExplanation', this._id, function(err, response){
-      Session.set('explanation', response);
     });
 
 	$('.revealed-answer').removeClass('hidden');
@@ -21,10 +20,6 @@ Template.incorrectAnswer.helpers({
 	answer: function(){
 		return Session.get('answer');
 	},
-
-	explanation: function(){
-		return Session.get('explanation');
-	}
 });
 
 Template.incorrectAnswer.rendered=function(){
