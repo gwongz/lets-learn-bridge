@@ -1,7 +1,6 @@
 Template.questionSubmit.events({
   'submit form': function(e) {
     e.preventDefault();
-
     // clear any client side errors that may have been rendered in earlier submission
     clearErrors();
 
@@ -21,4 +20,3 @@ Template.questionSubmit.events({
     });
   }
 });
-

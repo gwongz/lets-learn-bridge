@@ -179,7 +179,6 @@ a:focus{
 .answer-item input{
   width: 80%;
   background-color: #fff;
-  line-height: 2em;
   color: #777777;
   font-size: 48px !important;
   min-height: 80px;

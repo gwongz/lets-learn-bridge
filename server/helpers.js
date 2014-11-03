@@ -35,8 +35,6 @@ var isAccepted = function(submitted, correct, question){
     return submitted.join() == correct.join();
 
   }
-
-
 };
 
 
@@ -83,15 +81,18 @@ Meteor.methods({
     ,   questionId;
 
     // ensure the user is logged in
-    if (!user)
+    if (!user){
       throw new Meteor.Error('You need to log in to post a question');
+    }
 
     // ensure there is a question and answer provided
-    if (!questionAttributes.title)
+    if (!questionAttributes.title){
       throw new Meteor.Error('Please provide a question');
+    }
 
-    if (!questionAttributes.answer)
+    if (!questionAttributes.answer){
       throw new Meteor.Error('Please provide an answer');
+    }
 
     question = _.extend(_.pick(questionAttributes, 'title', 'answer', 'explanation', 'url'), {
       userId: user._id,
