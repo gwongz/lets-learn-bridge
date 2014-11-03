@@ -1,10 +1,8 @@
-/* CSS declarations go here */
-
 @font-face {
-    font-family: 'proxima_novalight';
-    src: url('public/proximanova-light-webfont.eot');/* IE9 Compat Modes */
-    src: url('public/proximanova-light-webfont.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    src: url('public/proximanova-light-webfont.svg') format('svg'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+  font-family: 'proxima_novalight';
+  src: url('public/proximanova-light-webfont.eot');/* IE9 Compat Modes */
+  src: url('public/proximanova-light-webfont.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: url('public/proximanova-light-webfont.svg') format('svg'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }
 
 * {
@@ -12,29 +10,26 @@
 }
 
 html, body {
-    font-family: 'proxima_novalight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    padding: 25px 0;
-    -webkit-user-select: auto;
-    -khtml-user-select: auto;
-    -moz-user-select: auto;
-    -o-user-select: auto;
-    user-select: inherit;
-    background: #f6f6f6;
-    color: #ff6759;  
-    font-size: 14px;
-    line-height: 1.4;
-    letter-spacing: 1px;
-    cursor: auto;
-    height: 100%;
-
-
+  font-family: 'proxima_novalight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  padding: 25px 0;
+  -webkit-user-select: auto;
+  -khtml-user-select: auto;
+  -moz-user-select: auto;
+  -o-user-select: auto;
+  user-select: inherit;
+  background: #f6f6f6;
+  color: #ff6759;  
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  cursor: auto;
+  height: 100%;
 }
 
 h3, input, textarea, a, p, footer{
-    font-family: 'proxima_novalight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 400;
-
+  font-family: 'proxima_novalight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
 }
 
 p{
@@ -52,21 +47,73 @@ footer .push{
 }
 
 input:focus{
-    outline: none;
-    border-color: #fff;
-    box-shadow: none;
+  outline: none;
+  border-color: #fff;
+  box-shadow: none;
 }
 
 a:focus{
   outline: none;
 }
 
+/* Alerts */
+
 .alert-error{
-    color: #ff6759;
-    background-color: #FFF0EE;
-    border-color: #FFE1DE;
-    z-index: -10;
+  color: #ff6759;
+  background-color: #FFF0EE;
+  border-color: #FFE1DE;
+  z-index: -10;
 }
+
+
+/* Navbar */
+
+.navbar { margin-bottom: 10px }
+
+.navbar .navbar-inner {
+  background: #f6f6f6;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  padding: 0;
+}
+
+.navbar .nav > li {
+  padding: 7px 45px 7px 0;
+
+}
+
+.navbar .nav > li:last-child{
+  padding: 7px 0;
+
+}
+
+.navbar .nav > li > a {
+  border-bottom: 1px #777 solid;
+  padding: 0 0 4px 0;
+}
+
+/* App outer layer */
+.layout{
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: 125px;
+}
+
+#spinner { 
+  height: 300px 
+}
+
+/* Login buttons */
+
+
+#login-buttons{
+  margin-top: -7px;
+  text-transform: uppercase;
+}
+
+
 
 .btn{
   background-color: #ff6759;
@@ -74,21 +121,28 @@ a:focus{
   color: #ff6759;
 }
 .dropdown-menu > button, .btn-default, .btn-primary, .login-close{
-    border-radius: 0px;
-    font-size: 14px;
-    letter-spacing: .1em;
-    color: #ff6759;
-    background-color: #fff;
-    border: solid 2px #ff6759;
-    text-transform: uppercase;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    background-image: none;
+  border-radius: 0;
+  font-size: 14px;
+  letter-spacing: .1em;
+  color: #ff6759;
+  background-color: #fff;
+  border: solid 2px #ff6759;
+  text-transform: uppercase;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-image: none;
+}
+
+.nav .dropdown-toggle .caret {
+  margin-top: 6px;
+  border-top-color: #777;
+  border-bottom-color: #777;
 }
 
 .nav .dropdown-toggle:hover .caret, .nav .dropdown-toggle:focus .caret {
   border-top-color: #777;
   border-bottom-color: #777;
 }
+
 
 .dropdown-menu > button:hover, .dropdown-menu > button:active, .dropdown-menu > button:visited, 
 .dropdown-menu>button:focus, .btn-default:active, .btn-default:hover, .btn-default:focus,
@@ -107,39 +161,6 @@ a:focus{
   outline: none;
 }
 
-.navbar { margin-bottom: 10px }
-
-.navbar .navbar-inner {
-  background: #f6f6f6;
-  box-shadow: none;
-  border-radius: none;
-  border: none;
-  padding: 0px;
-}
-
-
-.navbar .nav > li {
-  padding: 7px 45px 7px 0px;
-
-}
-
-.navbar .nav > li:last-child{
-  padding: 7px 0px;
-
-}
-
-.navbar .nav > li > a {
-  border-bottom: 1px #777 solid;
-  padding: 0px 0px 4px 0px;
-}
-
-/* App outer layer */
-.layout{
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin-bottom: 125px;
-}
 
 /* ACCOUNTS PAGE */
 
@@ -166,11 +187,7 @@ a:focus{
 
 
 
-.form-control{
-  box-shadow: none !important;
-  border: 1px solid #fff !important;
-}
-
+/* Answer templates */
 
 .answer-item{
   padding-bottom: 20px;
@@ -180,8 +197,9 @@ a:focus{
   width: 80%;
   background-color: #fff;
   color: #777777;
-  font-size: 48px !important;
+  font-size: 44px !important;
   min-height: 80px;
+  line-height: 1.4em;
 
 }
 
@@ -199,11 +217,6 @@ a:focus{
 
 .controls textarea{
   width: 60%;
-
-}
-
-.form-control:focus{
-	box-shadow: none;
 }
 
 /* Question items and pages */
@@ -217,49 +230,41 @@ a:focus{
 }
 
 .question .edit-link{
-    font-size: 12px;
+  font-size: 12px;
 }
 
 /* Forms */
+
+.form-control{
+  box-shadow: none !important;
+  border: 1px solid #fff !important;
+}
+
+.form-control:focus{
+  box-shadow: none;
+}
+
 .main {
-    background: #fff;
-    border-radius: 3px;
-    padding: 10px;
+  background: #fff;
+  border-radius: 3px;
+  padding: 10px;
 }
 
 .main .controls input{
-    background-color: #efefef;
+  background-color: #efefef;
 }
-
-
-
-#login-buttons{
-  margin-top: -7px;
-  text-transform: uppercase;
-}
-
-.nav .dropdown-toggle .caret {
-    margin-top: 6px;
-    border-top-color: #777;
-    border-bottom-color: #777;
-}
-
-
-#spinner { height: 300px }
-
-
 
 /* Media Queries */
 
 @media (max-width: 979px){
   .nav-collapse .nav > li > a:hover, .nav-collapse .nav > li > a:focus, 
   .nav-collapse .dropdown-menu a:hover, .nav-collapse .dropdown-menu a:focus {
-   background-color: inherit;
+    background-color: inherit;
   }
 
   .navbar .nav > li > a {
-      border-radius: 0px;
-      border-bottom: 1px black solid;
-      width: 700px;
+    border-radius: 0px;
+    border-bottom: 1px black solid;
+    width: 700px;
   }
 }
