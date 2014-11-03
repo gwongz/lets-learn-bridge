@@ -1,46 +1,45 @@
 <template name="questionEdit">
   <form class="main">
 
-
     <div class="control-group">
-        <label class="control-label" for="title">Question</label>
-        <div class="controls">
-            <input name="title" type="text" value="{{title}}" class="form-control" placeholder="Question"/>
-        </div>
+      <label class="control-label" for="title">Question</label>
+      <div class="controls">
+          <input name="title" type="text" value="{{title}}" class="form-control" placeholder="Question"/>
+      </div>
     </div>
 
     <div class="control-group">
-        <label class="control-label" for="answer">Answer</label>
-        <div class="controls">
-            <input name="answer" type="text" value="{{answer}}" class="form-control" placeholder="Answer"/>
-        </div>
+      <label class="control-label" for="answer">Answer</label>
+      <div class="controls">
+          <input name="answer" type="text" value="{{answer}}" class="form-control" placeholder="Answer"/>
+      </div>
     </div>
 
     <div class="control-group">
-        <label class="control-label" for="explanation">Explanation</label>
-        <div class="controls">
-            <input name="explanation" type="text" value="{{explanation}}" class="form-control" placeholder="Optional: Additional details to display with answer"/>
-        </div>
+      <label class="control-label" for="explanation">Explanation</label>
+      <div class="controls">
+          <input name="explanation" type="text" value="{{explanation}}" class="form-control" placeholder="Optional: Additional details to display with answer"/>
+      </div>
     </div>
 
     <div class="control-group">
-        <label class="control-label" for="url">URL</label>
-        <div class="controls">
-            <input name="url" type="text" class="form-control" value="{{url}}" placeholder="Optional: Source"/>
-        </div>
+      <label class="control-label" for="url">URL</label>
+      <div class="controls">
+          <input name="url" type="text" class="form-control" value="{{url}}" placeholder="Optional: Source"/>
+      </div>
     </div>
 
     <div class="control-group">
-        <!-- <div class="controls"> -->
-            <input type="submit" value="Submit" class="btn btn-default submit"/>
-        <!-- </div> -->
+      <input type="submit" value="Submit" class="btn btn-default submit"/>
     </div>
     <hr/>
+    
     <div class="control-group">
-        <div class="controls">
-            <a class="btn btn-default delete" href="#">Delete question</a>
-        </div>
+      <div class="controls">
+        <a class="btn btn-default delete" href="#">Delete question</a>
+      </div>
     </div>
+    
   </form>
 </template>
 
